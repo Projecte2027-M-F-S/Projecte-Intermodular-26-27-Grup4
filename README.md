@@ -2,4 +2,4 @@
 
 ## Index
 ### [PDF Contracte de serveis](Documentacio/Contracte M.F.S. SL i Microsoft.pdf)  
-### [Landing page](Landingpage/Landing_page.html)  
+### [Landing page](Landingpage/landing_page.html)  
