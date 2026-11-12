@@ -55,8 +55,22 @@ Tambe a la seguent pestaña hi ha  el cercador de serveis com demanama al encunc
 | Desar resultats | Opció per afegir `-f <nom>` i generar fitxers de sortida. |
 | Localització de l'executable | Busca `theHarvester` al mateix directori que l'intèrpret Python (venv) i, si no hi és, el cerca al `PATH`. |
 
+Aixis es veu la pestanya 
 
 <img width="1003" height="769" alt="image" src="https://github.com/user-attachments/assets/f91ca5cf-2e14-40ed-b2a1-ee36698182ed" />
+
+Aqui pots elegir la font de les dades
+
+<img width="214" height="198" alt="image" src="https://github.com/user-attachments/assets/bb91d17f-3252-4a30-bc3d-4cf739277293" />
+
+Aqui pots elegir si vols guardar un fixer del resultat
+
+<img width="271" height="69" alt="image" src="https://github.com/user-attachments/assets/aa9c91ce-b379-4326-8101-42177641eaa3" />
+
+Aqui se posa el nom del fixer
+
+<img width="377" height="55" alt="image" src="https://github.com/user-attachments/assets/5e462dfe-df69-4c8a-9356-08bc3af2dc66" />
+
 
 ---
 
