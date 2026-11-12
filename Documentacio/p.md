@@ -9,34 +9,16 @@ Aplicació d'escriptori amb interfície gràfica (Tkinter) que combina dos mòdu
 
 ## Índex
 
-1. [Novetats respecte a la versió anterior](#novetats-respecte-a-la-versió-anterior)
-2. [Funcionalitats](#funcionalitats)
-3. [Requisits i instal·lació](#requisits-i-instal·lació)
-4. [Ús](#ús)
-5. [Configuració](#configuració)
-6. [Arquitectura del codi](#arquitectura-del-codi)
-7. [Flux de dades](#flux-de-dades)
-8. [Gestió d'errors](#gestió-derrors)
-9. [Seguretat i ús responsable](#seguretat-i-ús-responsable)
-10. [Limitacions conegudes](#limitacions-conegudes)
-11. [Possibles millores](#possibles-millores)
+1. [Funcionalitats](#funcionalitats)
+2. [Requisits i instal·lació](#requisits-i-instal·lació)
+3. [Ús](#ús)
+4. [Arquitectura del codi](#arquitectura-del-codi)
+5. [Flux de dades](#flux-de-dades)
+6. [Gestió d'errors](#gestió-derrors)
+7. [Estroctura de fixers](#structura-de-fitxers)
 
 ---
 
-## Novetats respecte a la versió anterior
-
-| Canvi | Detall |
-|-------|--------|
-| Classe principal | `ShodanApp` passa a anomenar-se **`MainApp`**. |
-| Títol de la finestra | `MFS s.l. · Recon & OSINT Suite` (mida inicial `1000x720`). |
-| Estructura de pestanyes | Ara hi ha **dues pestanyes principals**: «Mòdul Shodan Recon» i «Cerca OSINT amb The Harvester». Les pestanyes d'Host i de Cerca de serveis són **subpestanyes** del mòdul Shodan (`self.shodan_nb`). |
-| Nou mòdul | Integració de **theHarvester** (`_build_harvester_tab`, `run_harvester`, `_append_harvest_output`, `_toggle_file_entry`). |
-| Capçalera | Subtítol: `Audit Suite · Shodan & OSINT Information Gathering`; etiqueta del camp: «Shodan API Key». |
-| Doble clic a la cerca | `_send_ip_to_host` ara comprova que el clic sigui sobre una **cel·la** (no a la capçalera) i canvia de subpestanya amb `self.shodan_nb.select(self.tab_host)`. |
-| Imports | S'afegeixen `subprocess` i `sys`; s'elimina `webbrowser`. |
-| Compactació de la UI | Taula d'hosts amb `height=7` i quadre de banner amb `height=4` per fer lloc a les subpestanyes. |
-
----
 
 ## Funcionalitats
 
@@ -57,13 +39,22 @@ Aplicació d'escriptori amb interfície gràfica (Tkinter) que combina dos mòdu
 | Desar resultats | Opció per afegir `-f <nom>` i generar fitxers de sortida. |
 | Localització de l'executable | Busca `theHarvester` al mateix directori que l'intèrpret Python (venv) i, si no hi és, el cerca al `PATH`. |
 
-### Característiques generals
 
-- Tema fosc personalitzat amb `ttk` (tema `clam`).
-- Logo opcional (`logo.png`) a la capçalera i com a icona de la finestra.
-- Operacions de xarxa i processos en fils (*threads*) perquè la interfície no es bloquegi.
-- *Fallback* gratuït a **InternetDB** si no hi ha clau API o aquesta no pot respondre.
+Per a consultar el host introduim la ip.
 
+<img width="584" height="150" alt="image" src="https://github.com/user-attachments/assets/30408f56-ced4-42ef-9706-7feda34c3648" />
+
+Aqui surtira la informacio
+
+<img width="1150" height="446" alt="image" src="https://github.com/user-attachments/assets/6b6bc0cf-a2bf-449b-88e6-e781e7d702d4" />
+
+Aqui els port i serveis
+
+<img width="1207" height="151" alt="image" src="https://github.com/user-attachments/assets/c2250da5-de98-49c4-b85f-15bdee1dc180" />
+
+Tambe a la seguent pestaña hi ha  el cercador de serveis com demanama al encunciat esta el filtre de 10 o 5 respostes.
+
+<img width="951" height="710" alt="image" src="https://github.com/user-attachments/assets/bb0d60af-b798-474a-9470-f14fa195b5c6" />
 ---
 
 ## Requisits i instal·lació
@@ -124,17 +115,7 @@ La comanda que s'executa es mostra a la primera línia de la sortida, per exempl
 
 ---
 
-## Configuració
 
-| Element | Valor | Descripció |
-|---------|-------|------------|
-| `COMPANY` | `"MFS s.l."` | Nom mostrat a títol, capçalera i peu. |
-| `LOGO_PATH` | `logo.png` (mateixa carpeta que el script) | Logo opcional. |
-| `SHODAN_API_KEY` | Variable d'entorn | Clau API de Shodan per defecte. |
-| `DEFAULT_API_KEY` | Constant al codi | Valor per defecte si no existeix la variable d'entorn (**vegeu [Seguretat](#seguretat-i-ús-responsable)**). |
-| Límit de theHarvester | `-l 500` | Valor fix al codi. |
-
-Ordre de preferència de la clau de Shodan: camp «Shodan API Key» de la interfície → `SHODAN_API_KEY` → `DEFAULT_API_KEY`.
 
 ### Paleta de colors
 
@@ -297,71 +278,6 @@ Les validacions d'entrada (IP no vàlida, IP no pública, cerca buida, clau buid
 | `FileNotFoundError` (no instal·lat) | Es mostra al quadre de sortida un missatge amb la comanda `pip install git+https://github.com/laramies/theHarvester.git` i l'estat passa a «theHarvester no trobat». |
 | Codi de retorn ≠ 0 | Estat en vermell: «Finalitzat amb codi N». |
 | Altra excepció | Es mostra al quadre de sortida i a la barra d'estat. |
-
----
-
-## Seguretat i ús responsable
-
-> ⚠️ **La clau API de Shodan continua escrita directament al codi** (`DEFAULT_API_KEY`).
-
-Riscos i recomanacions:
-
-- Qualsevol persona amb accés al fitxer (còpia, repositori Git, captura, adjunt) pot **usar i esgotar els crèdits** de la clau.
-- Es recomana **revocar/regenerar la clau** al panell de Shodan si el fitxer s'ha compartit o pujat a algun lloc.
-- Eliminar la constant i llegir la clau només des de l'entorn:
-
-```python
-self.api_key = tk.StringVar(value=os.environ.get("SHODAN_API_KEY", ""))
-```
-
-- Afegir fitxers amb secrets (`.env`, etc.) al `.gitignore`.
-- El camp de la interfície oculta la clau amb `show="•"`, però això només és visual.
-
-**Ús responsable:**
-
-- theHarvester i Shodan recullen informació pública, però cal usar-los només sobre **dominis i adreces propis o amb autorització explícita** (auditories contractades, inventari d'actius propis, recerca legítima).
-- El domini per defecte del camp de theHarvester és un valor d'exemple: canvia'l abans d'executar res.
-- La comanda s'executa amb una llista d'arguments (`Popen` sense `shell=True`), de manera que el text introduït al camp de domini no s'interpreta com a ordres de l'intèrpret.
-
----
-
-## Limitacions conegudes
-
-**Shodan**
-
-- **Extracció web fràgil:** les expressions regulars depenen del HTML actual de shodan.io; poden deixar de funcionar o assignar el port a una IP equivocada (s'associen per índex). Shodan sol exigir inici de sessió per a cerques, així que és habitual que aquest camí no retorni dades.
-- El *scraping* de shodan.io pot anar en contra dels seus termes d'ús; es recomana l'API oficial amb un pla adequat.
-- El pla gratuït (InternetDB) **no ofereix banners** ni versions detallades.
-- Al *fallback* d'host només es controlen errors `shodan.APIError`; els errors de xarxa es mostren com a error genèric.
-- Límit de resultats fixat a 5 o 10.
-
-**The Harvester**
-
-- **Separador del `PATH`:** el codi usa `:` (`f"{Path(sys.executable).parent}:{...}"`), correcte a Linux/macOS però no a Windows, on caldria `;` (o `os.pathsep`). A Windows, a més, l'executable dins del venv sol ser `theHarvester.exe` dins de `Scripts`, que el codi no detecta tal qual.
-- No hi ha botó per **cancel·lar** l'execució ni *timeout*.
-- El límit `-l 500` està fixat al codi.
-- La sortida pot incloure codis de color ANSI que el quadre de text no interpreta.
-- El nom de fitxer (`-f`) no es valida ni es mostra on es desa; el directori de sortida depèn del directori de treball i de la versió de theHarvester.
-- La font `all` pot ser lenta i generar moltes consultes.
-
-**General**
-
-- `_get_api()` no s'utilitza.
-- Les tipografies `Segoe UI` i `Consolas` són de Windows; en altres sistemes Tk en farà una substitució.
-
----
-
-## Possibles millores
-
-- Eliminar la clau del codi i usar `keyring` o només variables d'entorn.
-- Substituir el *scraping* de Shodan per l'API oficial, amb un avís clar si cal pla de pagament.
-- Usar `os.pathsep` i detectar `theHarvester.exe` per fer el mòdul compatible amb Windows.
-- Afegir botó **Aturar** (`proc.terminate()`) i *timeout* configurable.
-- Fer configurable el límit `-l` i mostrar la ruta del fitxer generat per `-f`.
-- Eliminar els codis ANSI de la sortida o interpretar-los amb etiquetes de `Text`.
-- Botó per **exportar** els resultats de Shodan (CSV/JSON) i per copiar la sortida d'OSINT.
-- Opció per enviar els hosts/IP trobats per theHarvester al mòdul Shodan.
-- Separar la lògica de xarxa/processos de la interfície per poder-la provar amb tests.
 
 ---
 
