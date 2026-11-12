@@ -41,9 +41,9 @@ Aqui els port i serveis
 
 <img width="1207" height="151" alt="image" src="https://github.com/user-attachments/assets/c2250da5-de98-49c4-b85f-15bdee1dc180" />
 
-Tambe a la seguent pestaña hi ha  el cercador de serveis com demanama al encunciat esta el filtre de 10 o 5 respostes
+Tambe a la seguent pestaña hi ha  el cercador de serveis com demanama al encunciat esta el filtre de 10 o 5 respostes.
 
-<img width="987" height="731" alt="image" src="https://github.com/user-attachments/assets/9665d631-e554-47ec-9540-b6a6126c278a" />
+<img width="951" height="710" alt="image" src="https://github.com/user-attachments/assets/bb0d60af-b798-474a-9470-f14fa195b5c6" />
 
 ## Requisits i instal·lació
 
