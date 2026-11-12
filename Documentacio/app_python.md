@@ -1,4 +1,4 @@
-# MFS Recon & OSINT Suite (`shodan_gui.py`)
+# MFS Recon & OSINT Suite 
 
 Aplicació d'escriptori amb interfície gràfica (Tkinter) que combina dos mòduls de recopilació d'informació:
 
