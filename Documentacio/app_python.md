@@ -30,21 +30,7 @@ Aplicació d'escriptori amb interfície gràfica (Tkinter) que combina dos mòdu
 | 2 | **Identificació de serveis** | Servei, protocol, versió i *banner* de cada port (a partir de dades ja indexades per Shodan). |
 | 3 | **Cerca de serveis** | Cerca inversa d'un producte o servei (p. ex. `proftpd`, `nginx`) amb llistat d'IP, port i organització. Doble clic sobre una fila per consultar la IP. |
 
-Per a consultar el host introduim la ip.
 
-<img width="979" height="278" alt="image" src="https://github.com/user-attachments/assets/a8257ba2-3009-4dc4-81a1-4526391ac7b7" />
-
-Aqui surtira la informacio
-
-<img width="1150" height="446" alt="image" src="https://github.com/user-attachments/assets/6b6bc0cf-a2bf-449b-88e6-e781e7d702d4" />
-
-Aqui els port i serveis
-
-<img width="1207" height="151" alt="image" src="https://github.com/user-attachments/assets/c2250da5-de98-49c4-b85f-15bdee1dc180" />
-
-Tambe a la seguent pestaña hi ha  el cercador de serveis com demanama al encunciat esta el filtre de 10 o 5 respostes.
-
-<img width="934" height="455" alt="image" src="https://github.com/user-attachments/assets/523d0d1f-fb3b-4ab1-a600-78eb273232fb" />
 
 ### Mòdul The Harvester (OSINT)
 
@@ -55,21 +41,7 @@ Tambe a la seguent pestaña hi ha  el cercador de serveis com demanama al encunc
 | Desar resultats | Opció per afegir `-f <nom>` i generar fitxers de sortida. |
 | Localització de l'executable | Busca `theHarvester` al mateix directori que l'intèrpret Python (venv) i, si no hi és, el cerca al `PATH`. |
 
-Aixis es veu la pestanya 
 
-<img width="1003" height="769" alt="image" src="https://github.com/user-attachments/assets/f91ca5cf-2e14-40ed-b2a1-ee36698182ed" />
-
-Aqui pots elegir la font de les dades
-
-<img width="214" height="198" alt="image" src="https://github.com/user-attachments/assets/bb91d17f-3252-4a30-bc3d-4cf739277293" />
-
-Aqui pots elegir si vols guardar un fixer del resultat
-
-<img width="271" height="69" alt="image" src="https://github.com/user-attachments/assets/aa9c91ce-b379-4326-8101-42177641eaa3" />
-
-Aqui se posa el nom del fixer
-
-<img width="377" height="55" alt="image" src="https://github.com/user-attachments/assets/5e462dfe-df69-4c8a-9356-08bc3af2dc66" />
 
 
 ---
@@ -104,10 +76,18 @@ python shodan_gui.py
 
 ### Mòdul Shodan → «Consulta d'Host»
 
-1. Introdueix una adreça IP **pública** (no privada ni reservada).
-2. Prem **Consultar** (o `Enter`).
-3. Es mostren: IP, hostnames, ports oberts, software (CPE), vulnerabilitats i font de les dades.
-4. Selecciona una fila de la taula per veure el **banner** del port.
+1. Introdueix una adreça IP **pública** (no privada ni reservada), Prem **Consultar** (o `Enter`).
+   
+<img width="979" height="278" alt="image" src="https://github.com/user-attachments/assets/a8257ba2-3009-4dc4-81a1-4526391ac7b7" />
+
+2.Es mostren: IP, hostnames, ports oberts, software (CPE), vulnerabilitats i font de les dades.
+
+<img width="1150" height="446" alt="image" src="https://github.com/user-attachments/assets/6b6bc0cf-a2bf-449b-88e6-e781e7d702d4" />
+
+3. Aqui els port i serveis
+
+<img width="1207" height="151" alt="image" src="https://github.com/user-attachments/assets/c2250da5-de98-49c4-b85f-15bdee1dc180" />
+
 
 ### Mòdul Shodan → «Cerca de serveis»
 
@@ -116,19 +96,30 @@ python shodan_gui.py
 3. Prem **Cercar**.
 4. Fes **doble clic** sobre una fila: l'aplicació canvia a la subpestanya d'Host i consulta aquella IP.
 
+<img width="934" height="455" alt="image" src="https://github.com/user-attachments/assets/523d0d1f-fb3b-4ab1-a600-78eb273232fb" />
+
 ### Pestanya «Cerca OSINT amb The Harvester»
 
-1. Escriu el **domini objectiu** (`-d`). El valor per defecte és `iesebre.cat`: **canvia'l pel domini que tinguis autorització per analitzar**.
-2. Tria la **font de dades** (`-b`): `duckduckgo` (per defecte), `bing`, `crtsh`, `google`, `linkedin` o `all`.
-3. (Opcional) Marca **«Guardar resultats en fitxer (-f)»** i indica el nom del fitxer (per defecte `resultats_osint`).
-4. Prem **Executar The Harvester**.
-5. Segueix la sortida al quadre inferior. Pot trigar entre 15 i 40 segons, segons la font.
+1. Escriu el **domini objectiu** (`-d`). El valor per defecte és `iesebre.com`: **canvia'l pel domini que tinguis autorització per analitzar**.
 
-La comanda que s'executa es mostra a la primera línia de la sortida, per exemple:
+<img width="449" height="72" alt="image" src="https://github.com/user-attachments/assets/af116933-34a0-41be-a300-f19cc722efbf" />
 
-```text
-[*] Executant: theHarvester -d exemple.cat -b duckduckgo -l 500
-```
+3. Tria la **font de dades** (`-b`): `duckduckgo` (per defecte), `bing`, `crtsh`, `google`, `linkedin` o `all`.
+
+<img width="214" height="198" alt="Captura de pantalla de 2026-11-12 21-36-07" src="https://github.com/user-attachments/assets/3da32b91-fc8b-4c7b-a8d2-5b07df43da9e" />
+
+4. (Opcional) Marca **«Guardar resultats en fitxer (-f)»** i indica el nom del fitxer (per defecte `resultats_osint`).
+   
+<img width="271" height="69" alt="Captura de pantalla de 2026-11-12 21-36-33" src="https://github.com/user-attachments/assets/d69d8323-1745-47d7-ab9f-2a96ea72889b" />
+
+6. Prem **Executar The Harvester**.
+   
+<img width="245" height="74" alt="image" src="https://github.com/user-attachments/assets/fd8f8b03-d6a4-43a3-988d-c777841391ee" />
+
+8. Segueix la sortida al quadre inferior. Pot trigar entre 15 i 40 segons, segons la font.
+   
+<img width="1003" height="769" alt="Captura de pantalla de 2026-11-12 21-27-16" src="https://github.com/user-attachments/assets/894f8517-7d1c-4c29-aba7-fcae5083a73e" />
+
 
 ---
 
