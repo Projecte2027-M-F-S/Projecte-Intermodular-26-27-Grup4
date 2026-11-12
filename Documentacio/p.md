@@ -32,7 +32,7 @@ Aplicació d'escriptori amb interfície gràfica (Tkinter) que combina dos mòdu
 
 Per a consultar el host introduim la ip.
 
-<img width="584" height="150" alt="image" src="https://github.com/user-attachments/assets/30408f56-ced4-42ef-9706-7feda34c3648" />
+<img width="979" height="278" alt="image" src="https://github.com/user-attachments/assets/a8257ba2-3009-4dc4-81a1-4526391ac7b7" />
 
 Aqui surtira la informacio
 
