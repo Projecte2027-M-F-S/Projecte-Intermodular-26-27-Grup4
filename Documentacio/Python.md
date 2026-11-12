@@ -1,5 +1,6 @@
 #
-# Shodan Recon (`shodan_gui.py`)
+# API Shodan en Python
+
 
 Aplicació d'escriptori amb interfície gràfica (Tkinter) per fer **reconeixement passiu** amb [Shodan](https://www.shodan.io). No s'envia cap paquet a l'objectiu: tota la informació prové de les bases de dades de Shodan.
 
@@ -28,15 +29,21 @@ Aplicació d'escriptori amb interfície gràfica (Tkinter) per fer **reconeixeme
 | 2 | **Identificació de serveis** | Mostra servei, protocol, versió i *banner* de cada port (banner grabbing a partir de dades ja indexades per Shodan). |
 | 3 | **Cerca de serveis** | Cerca inversa d'un producte o servei (p. ex. `proftpd`, `nginx`) i llista IP, port i organització dels resultats. |
 
-Característiques addicionals:
+Per a consultar el host introduim la ip.
 
-- Tema fosc personalitzat amb `ttk` (tema `clam`).
-- Logo opcional (`logo.png`) a la capçalera i com a icona de la finestra.
-- Consultes en fils (*threads*) perquè la interfície no es bloquegi.
-- Doble clic sobre una IP de la cerca per consultar-la directament a la pestanya d'Host.
-- *Fallback* gratuït: si no hi ha clau API, o aquesta no pot respondre, s'usa **InternetDB**.
+<img width="584" height="150" alt="image" src="https://github.com/user-attachments/assets/30408f56-ced4-42ef-9706-7feda34c3648" />
 
----
+Aqui surtira la informacio
+
+<img width="1150" height="446" alt="image" src="https://github.com/user-attachments/assets/6b6bc0cf-a2bf-449b-88e6-e781e7d702d4" />
+
+
+
+<img width="1207" height="151" alt="image" src="https://github.com/user-attachments/assets/c2250da5-de98-49c4-b85f-15bdee1dc180" />
+
+
+
+<img width="987" height="731" alt="image" src="https://github.com/user-attachments/assets/9665d631-e554-47ec-9540-b6a6126c278a" />
 
 ## Requisits i instal·lació
 
@@ -239,25 +246,8 @@ self.api_key = tk.StringVar(value=os.environ.get("SHODAN_API_KEY", ""))
 ├── shodan_gui.py   # Aplicació
 └── logo.png        # (opcional) Logo de l'empresa
 ```
-## API Shodan en Python
-### Funcionament se la app
-
-Per a consultar el host introduim la ip.
-
-<img width="584" height="150" alt="image" src="https://github.com/user-attachments/assets/30408f56-ced4-42ef-9706-7feda34c3648" />
-
-Aqui surtira la informacio
-
-<img width="1150" height="446" alt="image" src="https://github.com/user-attachments/assets/6b6bc0cf-a2bf-449b-88e6-e781e7d702d4" />
 
 
 
-<img width="1207" height="151" alt="image" src="https://github.com/user-attachments/assets/c2250da5-de98-49c4-b85f-15bdee1dc180" />
 
 
-
-<img width="987" height="731" alt="image" src="https://github.com/user-attachments/assets/9665d631-e554-47ec-9540-b6a6126c278a" />
-
-
-## The Harvester des del nostre Script en Python
-##
