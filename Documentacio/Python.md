@@ -8,8 +8,9 @@ Per a consultar el host introduim la ip.
 
 Aqui surtira la 
 
-<img width="1224" height="564" alt="image" src="https://github.com/user-attachments/assets/18f99255-591a-46e6-8e8d-d13bc2ee44cd" />
+<img width="1150" height="446" alt="image" src="https://github.com/user-attachments/assets/6b6bc0cf-a2bf-449b-88e6-e781e7d702d4" />
 
+<img width="1207" height="151" alt="image" src="https://github.com/user-attachments/assets/c2250da5-de98-49c4-b85f-15bdee1dc180" />
 
 <img width="987" height="731" alt="image" src="https://github.com/user-attachments/assets/9665d631-e554-47ec-9540-b6a6126c278a" />
 
