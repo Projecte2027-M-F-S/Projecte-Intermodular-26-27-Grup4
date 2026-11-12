@@ -44,7 +44,7 @@ Aqui els port i serveis
 
 Tambe a la seguent pestaña hi ha  el cercador de serveis com demanama al encunciat esta el filtre de 10 o 5 respostes.
 
-<img width="951" height="710" alt="image" src="https://github.com/user-attachments/assets/bb0d60af-b798-474a-9470-f14fa195b5c6" />
+<img width="934" height="455" alt="image" src="https://github.com/user-attachments/assets/523d0d1f-fb3b-4ab1-a600-78eb273232fb" />
 
 ### Mòdul The Harvester (OSINT)
 
