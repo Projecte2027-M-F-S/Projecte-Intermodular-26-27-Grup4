@@ -30,16 +30,6 @@ Aplicació d'escriptori amb interfície gràfica (Tkinter) que combina dos mòdu
 | 2 | **Identificació de serveis** | Servei, protocol, versió i *banner* de cada port (a partir de dades ja indexades per Shodan). |
 | 3 | **Cerca de serveis** | Cerca inversa d'un producte o servei (p. ex. `proftpd`, `nginx`) amb llistat d'IP, port i organització. Doble clic sobre una fila per consultar la IP. |
 
-### Mòdul The Harvester (OSINT)
-
-| Funció | Descripció |
-|--------|------------|
-| Execució de theHarvester | Llança `theHarvester -d <domini> -b <font> -l 500` des de la interfície. |
-| Sortida en temps real | La sortida estàndard i d'error es llegeixen línia a línia i s'afegeixen al quadre de text. |
-| Desar resultats | Opció per afegir `-f <nom>` i generar fitxers de sortida. |
-| Localització de l'executable | Busca `theHarvester` al mateix directori que l'intèrpret Python (venv) i, si no hi és, el cerca al `PATH`. |
-
-
 Per a consultar el host introduim la ip.
 
 <img width="584" height="150" alt="image" src="https://github.com/user-attachments/assets/30408f56-ced4-42ef-9706-7feda34c3648" />
@@ -55,6 +45,19 @@ Aqui els port i serveis
 Tambe a la seguent pestaña hi ha  el cercador de serveis com demanama al encunciat esta el filtre de 10 o 5 respostes.
 
 <img width="951" height="710" alt="image" src="https://github.com/user-attachments/assets/bb0d60af-b798-474a-9470-f14fa195b5c6" />
+
+### Mòdul The Harvester (OSINT)
+
+| Funció | Descripció |
+|--------|------------|
+| Execució de theHarvester | Llança `theHarvester -d <domini> -b <font> -l 500` des de la interfície. |
+| Sortida en temps real | La sortida estàndard i d'error es llegeixen línia a línia i s'afegeixen al quadre de text. |
+| Desar resultats | Opció per afegir `-f <nom>` i generar fitxers de sortida. |
+| Localització de l'executable | Busca `theHarvester` al mateix directori que l'intèrpret Python (venv) i, si no hi és, el cerca al `PATH`. |
+
+
+<img width="1003" height="769" alt="image" src="https://github.com/user-attachments/assets/f91ca5cf-2e14-40ed-b2a1-ee36698182ed" />
+
 ---
 
 ## Requisits i instal·lació
